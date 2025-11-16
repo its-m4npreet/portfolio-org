@@ -1,13 +1,13 @@
 import './App.css'
 import TwinklingBackground from './components/TwinklingBackground'
-// import Hero from './components/Hero'
+import Hero from './components/Hero'
 
 function App() {
 
   return (
     <>
       <TwinklingBackground />
-      {/* <Hero /> */}
+      <Hero />
     </>
   )
 }
