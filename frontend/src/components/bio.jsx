@@ -1,7 +1,7 @@
 export const Bio = () => {
   return (
     <div className="bio w-full md:my-8 px-4">
-      <p className="text-2xl md:text-lg leading-relaxed text-gray-350">
+      <p className="text-base md:text-lg leading-relaxed text-gray-350">
         I'm a{" "}
         <span className="text-white font-semibold">full-stack developer</span>{" "}
         with a passion for crafting powerful and user-friendly{" "}
