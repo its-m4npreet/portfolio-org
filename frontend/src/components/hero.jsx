@@ -1,8 +1,8 @@
 import { IoLocation } from "react-icons/io5";
-const Hero = () => {
+export const Hero = () => {
   return (
     <>
-    <div className="header w-full flex flex-row justify-between items-center gap-6 my-12 md:my-20 px-4">
+    <div className="header w-full flex flex-row justify-between items-center gap-6 my-12 md:my-10 px-4">
       <div className="pfp w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-2xl overflow-hidden border-4 border-white shadow-lg shrink-0">
         <img src="p1.jpg" alt="pfp" className="w-full h-full object-cover" />
       </div>
