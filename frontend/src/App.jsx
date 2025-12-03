@@ -1,6 +1,6 @@
 import './App.css'
-import TwinklingBackground from './components/TwinklingBackground'
 import Hero from './components/Hero'
+import TwinklingBackground from './components/TwinklingBackground'
 import Bio from './components/bio'
 
 function App() {
