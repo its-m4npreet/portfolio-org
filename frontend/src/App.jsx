@@ -3,6 +3,8 @@ import Hero from './components/hero'
 import TwinklingBackground from './components/TwinklingBackground'
 import Bio from './components/bio'
 import Skills from './components/skills'
+import Projects from './components/Projects'
+import Footer from './components/Footer'
 import { GiCoffeeMug } from 'react-icons/gi'
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
     <>
       <TwinklingBackground />
       <a 
-        href="https://buymeacoffee.com/yourname" 
+        href={import.meta.env.VITE_PAY_LINK} 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed top-5 right-5 md:top-6 md:right-6 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-medium px-4 py-2.5 md:px-5 md:py-3 rounded-xl flex items-center gap-2.5 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-50 border border-white/20 hover:border-white/30 group"
@@ -23,6 +25,8 @@ function App() {
         <Hero />
       <Bio />
       <Skills />
+      <Projects />
+      <Footer />
       </div>
     </>
   )
