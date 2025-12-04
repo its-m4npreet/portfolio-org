@@ -1,16 +1,18 @@
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Hero from './components/hero'
 import TwinklingBackground from './components/TwinklingBackground'
 import Bio from './components/bio'
 import Skills from './components/skills'
 import Projects from './components/Projects'
 import Footer from './components/Footer'
+import AllProjects from './pages/AllProjects'
 import { GiCoffeeMug } from 'react-icons/gi'
 
 function App() {
 
   return (
-    <>
+    <Router>
       <TwinklingBackground />
       <a 
         href={import.meta.env.VITE_PAY_LINK} 
@@ -21,14 +23,20 @@ function App() {
         <GiCoffeeMug className="text-xl md:text-2xl group-hover:rotate-12 transition-transform duration-300" />
         <span className="hidden sm:inline text-sm md:text-base">Buy me a coffee</span>
       </a>
-      <div className='flex flex-col'>
-        <Hero />
-      <Bio />
-      <Skills />
-      <Projects />
-      <Footer />
-      </div>
-    </>
+      
+      <Routes>
+        <Route path="/" element={
+          <div className='flex flex-col'>
+            <Hero />
+            <Bio />
+            <Skills />
+            <Projects />
+            <Footer />
+          </div>
+        } />
+        <Route path="/projects" element={<AllProjects />} />
+      </Routes>
+    </Router>
   )
 }
 
