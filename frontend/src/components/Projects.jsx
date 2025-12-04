@@ -26,6 +26,7 @@ const Projects = () => {
     <div className="projects-section w-full my-8 px-4">
       {/* Projects Header */}
       <div className='flex mb-6' >
+        spa
          <p className="text-white font-semibold">[ Some things I've built ]</p> 
       </div>
 
@@ -58,29 +59,29 @@ const Projects = () => {
                 <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
               </div>
 
-              <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed line-clamp-4">
                 {project.description}
               </p>
 
               {/* Links */}
-              <div className="flex gap-4 pt-2">
+              <div className="flex gap-3 pt-2">
                 <a 
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                  aria-label="GitHub"
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-800/80 hover:bg-gray-700/80 text-white text-sm font-medium rounded-lg border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
                 >
-                  <FaGithub className="text-xl md:text-2xl" />
+                  <FaGithub className="text-base" />
+                  <span>GitHub</span>
                 </a>
                 <a 
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                  aria-label="Live Demo"
+                  className="flex items-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/30 text-white text-sm font-medium rounded-lg border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300"
                 >
-                  <FaExternalLinkAlt className="text-lg md:text-xl" />
+                  <FaExternalLinkAlt className="text-sm" />
+                  <span>Live Demo</span>
                 </a>
               </div>
             </div>
