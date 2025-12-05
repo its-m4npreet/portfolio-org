@@ -8,9 +8,9 @@ const Hero = () => {
       </div>
       <div className="info h-full flex flex-col justify-center items-center  text-center  mt-4 text-white">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-3 tracking-tight leading-none">MANPREET</h1>
-        <div className="flex items-center gap-2 mb-8 opacity-90 text-sm sm:text-base">
+        <div className="flex items-center gap-2 mb-8 opacity-90 text-sm sm:text-base text-gray-300">
           <IoLocation className="w-4 h-full sm:w-5 sm:h-5" />
-          <span className="font-medium">Hoshiarpur<span className="font-normal">, </span>Punjab<span className="font-normal">, </span>India</span>
+          <span className="font-medium ">Hoshiarpur<span className="font-normal">, </span>Punjab<span className="font-normal">, </span>India</span>
         </div>
       </div>
     </div>
