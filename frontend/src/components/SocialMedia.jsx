@@ -36,7 +36,7 @@ const SocialMedia = () => {
   ];
 
   return (
-    <section className="w-full py-12 px-4 relative z-10">
+    <section className="w-full  px-4 relative z-10">
       <div className="max-w-3xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-8">
