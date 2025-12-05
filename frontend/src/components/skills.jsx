@@ -13,7 +13,12 @@ import {
   SiNotion,
   SiGithub,
   SiSwagger,
-  SiFigma
+  SiFigma,
+  SiSupabase,
+  SiFirebase,
+  SiPhp,
+  SiOracle,
+  SiMysql
 } from 'react-icons/si';
 import { TbBrandReactNative, TbBrandVscode } from 'react-icons/tb';
 import { VscVscode  } from 'react-icons/vsc';
@@ -25,6 +30,8 @@ const Skills = () => {
     { name: 'CSS', icon: SiCss3, color: 'text-blue-500' },
     { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-300' },
     { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400' },
+    { name: 'PHP', icon: SiPhp, color: 'text-indigo-400' },
+    { name: 'SQL', icon: SiMysql, color: 'text-blue-600' },
     { name: 'React', icon: SiReact, color: 'text-cyan-400' },
     { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-600' },
     { name: 'Tailwind', icon: SiTailwindcss, color: 'text-cyan-500' },
@@ -32,6 +39,9 @@ const Skills = () => {
 
   const tools = [
     { name: 'Render', icon: TbBrandReactNative, color: 'text-purple-400' },
+    { name: 'Supabase', icon: SiSupabase, color: 'text-green-500' },
+    { name: 'Firebase', icon: SiFirebase, color: 'text-yellow-500' },
+    { name: 'Oracle', icon: SiOracle, color: 'text-red-600' },
     { name: 'Notion', icon: SiNotion, color: 'text-white' },
     { name: 'Git', icon: SiGit, color: 'text-orange-600' },
     { name: 'GitHub', icon: SiGithub, color: 'text-white' },
