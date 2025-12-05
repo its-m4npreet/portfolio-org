@@ -31,7 +31,7 @@ const SocialMedia = () => {
     {
       name: 'Email',
       icon: CgMail ,
-      url: 'mailto:manpreet234567890@gmail.com',
+      url: 'mailto:manpreetji234567890@gmail.com',
     }
   ];
 
