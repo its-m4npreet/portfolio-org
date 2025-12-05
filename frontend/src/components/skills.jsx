@@ -53,7 +53,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-gray-700/80 px-3 py-1.5 md:px-3.5 md:py-2 rounded-md border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:scale-105 group shadow-lg"
+              className="flex items-center gap-2 bg-transparent backdrop-blur-sm px-3 py-1.5 md:px-3.5 md:py-2 rounded-md border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:scale-105 group shadow-lg"
             >
               <skill.icon className={`text-base md:text-lg ${skill.color} group-hover:scale-110 transition-transform duration-300`} />
               <span className="text-white font-semibold text-xs md:text-sm">{skill.name}</span>
@@ -72,7 +72,7 @@ const Skills = () => {
           {tools.map((tool, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-gray-700/80 px-3 py-1.5 md:px-3.5 md:py-2 rounded-md border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:scale-105 group shadow-lg"
+              className="flex items-center gap-2 bg-transparent backdrop-blur-sm  px-3 py-1.5 md:px-3.5 md:py-2 rounded-md border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:scale-105 group shadow-lg"
             >
               <tool.icon className={`text-base md:text-lg ${tool.color} group-hover:scale-110 transition-transform duration-300`} />
               <span className="text-white font-semibold text-xs md:text-sm">{tool.name}</span>

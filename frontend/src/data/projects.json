@@ -20,16 +20,6 @@
     "featured": true
   },
   {
-    "id": "PRJ3H6T2Y9",
-    "title": "Eshoply",
-    "description": "A feature-rich e-commerce platform offering product browsing, real-time filtering, cart management, product details, and a seamless user shopping experience.",
-    "image": "eshoply.png",
-    "githubLink": "https://github.com/its-m4npreet/Ecommerce",
-    "liveLink": "https://eshoply.vercel.app/",
-    "type": "Full Stack",
-    "featured": false
-  },
-  {
     "id": "PRJ9L4R7P3",
     "title": "Critic Score",
     "description": "A rating and review application where users can explore items, view detailed scores, and access an organized review system.",
@@ -46,6 +36,16 @@
     "image": "landingPage.png",
     "githubLink": "https://github.com/its-m4npreet/citycare",
     "liveLink": "https://careyourcity.vercel.app/",
+    "type": "Full Stack",
+    "featured": false
+  },
+  {
+    "id": "PRJ3H6T2Y9",
+    "title": "Eshoply",
+    "description": "A feature-rich e-commerce platform offering product browsing, real-time filtering, cart management, product details, and a seamless user shopping experience.",
+    "image": "eshoply.png",
+    "githubLink": "https://github.com/its-m4npreet/Ecommerce",
+    "liveLink": "https://eshoply.vercel.app/",
     "type": "Full Stack",
     "featured": false
   }

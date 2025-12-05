@@ -1,6 +1,6 @@
 export const Bio = () => {
   return (
-    <div className="bio w-full md:my-8 px-4">
+    <div className="bio w-full md:my-8 px-4 text-gray-400">
        <p>
           I'm a <span className="font-semibold text-white">full-stack developer</span> 
           with a passion for crafting powerful and user-friendly 

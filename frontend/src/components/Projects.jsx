@@ -39,7 +39,7 @@ const Projects = () => {
       </div>
 
       <div className="space-y-10 md:space-y-12">
-        {(showAll ? projects : projects.slice(0, 5)).map((project, index) => (
+        {(showAll ? projects : projects.slice(0, 3)).map((project, index) => (
           <div 
             key={project.id}
             className={`flex flex-col lg:flex-row gap-6 md:gap-8 items-center ${
@@ -65,7 +65,7 @@ const Projects = () => {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   
-                    <p className="text-purple-400 text-xs md:text-sm font-medium">{project.type}</p>
+                    <p className="text-gray-400 text-xs md:text-sm">{project.type}</p>
                   
                  
                 </div>
@@ -82,7 +82,7 @@ const Projects = () => {
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-gray-800/80 hover:bg-gray-700/80 text-white text-sm font-medium rounded-lg border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-gray-300 hover:text-white text-sm rounded-md border border-[#333] hover:border-[#444] transition-colors"
                 >
                   <FaGithub className="text-base" />
                   <span>GitHub</span>
@@ -91,7 +91,7 @@ const Projects = () => {
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-purple-600/20 hover:bg-purple-600/30 text-white text-sm font-medium rounded-lg border border-purple-500/30 hover:border-purple-500/50 transition-all duration-300"
+                  className="flex items-center gap-2 px-4 py-2 bg-transparent hover:bg-white/5 text-gray-300 hover:text-white text-sm rounded-md border border-[#333] hover:border-white/20 transition-colors"
                 >
                   <FaExternalLinkAlt className="text-sm" />
                   <span>Live Demo</span>
@@ -103,11 +103,11 @@ const Projects = () => {
       </div>
 
       {/* Show More/Less Button */}
-      {projects.length > 5 && (
+      {projects.length > 3 && (
         <div className="flex justify-end mt-10">
           <Link
             to="/projects"
-            className="px-4 py-2 bg-gray-800/80 hover:bg-gray-700/80 text-white text-xs font-medium rounded-lg border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:scale-105"
+            className="px-5 py-2 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-gray-300 hover:text-white text-sm rounded-md border border-[#333] hover:border-[#444] transition-colors"
           >
             Show All ({projects.length})
           </Link>
