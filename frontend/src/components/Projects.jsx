@@ -1,63 +1,31 @@
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import projectsData from '../data/projects.json';
+
+// Import images
+import blogZone from '../assets/blogZone.png';
+import rixnTweaks from '../assets/rixn-tweaks.png';
+import eshoply from '../assets/eshoply.png';
+import criticScore from '../assets/criticScore.png';
+import landingPage from '../assets/landingPage.png';
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
-  const projects = [
-    {
-      id: 1,
-      title: "Example Project",
-      description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/project1.jpg",
-      githubLink: "https://github.com/yourusername/project1",
-      liveLink: "https://project1.com",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Example Project",
-      description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/project2.jpg",
-      githubLink: "https://github.com/yourusername/project2",
-      liveLink: "https://project2.com",
-      featured: true
-    },
-     {
-      id: 3,
-      title: "Example Project",
-      description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/project2.jpg",
-      githubLink: "https://github.com/yourusername/project2",
-      liveLink: "https://project2.com",
-      featured: true
-    },
-     {
-      id: 4,
-      title: "Example Project",
-      description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/project2.jpg",
-      githubLink: "https://github.com/yourusername/project2",
-      liveLink: "https://project2.com",
-      featured: true
-    }, {
-      id: 5,
-      title: "Example Project",
-      description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/project2.jpg",
-      githubLink: "https://github.com/yourusername/project2",
-      liveLink: "https://project2.com",
-      featured: true
-    }, {
-      id: 6,
-      title: "Example Project",
-      description: "A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      image: "/project2.jpg",
-      githubLink: "https://github.com/yourusername/project2",
-      liveLink: "https://project2.com",
-      featured: true
-    }
-  ];
+  
+  // Map image names to imports
+  const imageMap = {
+    'blogZone.png': blogZone,
+    'rixn-tweaks.png': rixnTweaks,
+    'eshoply.png': eshoply,
+    'criticScore.png': criticScore,
+    'landingPage.png': landingPage
+  };
+  
+  const projects = projectsData.map(project => ({
+    ...project,
+    image: imageMap[project.image]
+  }));
 
   return (
     <div className="projects-section w-full my-8 px-4">
@@ -95,7 +63,12 @@ const Projects = () => {
             {/* Project Info */}
             <div className="w-full lg:w-1/2 space-y-3 md:space-y-4">
               <div>
-                <p className="text-purple-400 text-xs md:text-sm font-medium mb-2">Featured Project</p>
+                <div className="flex items-center gap-2 mb-2">
+                  
+                    <p className="text-purple-400 text-xs md:text-sm font-medium">{project.type}</p>
+                  
+                 
+                </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h3>
               </div>
 

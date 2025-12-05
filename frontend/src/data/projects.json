@@ -1,0 +1,52 @@
+[
+  {
+    "id": "PRJ7K2M9X4",
+    "title": "BlogZone-CLG",
+    "description": "A modern blogging platform where users can create accounts, publish posts, manage their blogs, and explore content from multiple categories.",
+    "image": "blogZone.png",
+    "githubLink": "https://github.com/its-m4npreet/BlogZone-Clg-project",
+    "liveLink": "https://blogzone-clg.netlify.app/",
+    "type": "Full Stack",
+    "featured": true
+  },
+  {
+    "id": "PRJ5N8Q1W6",
+    "title": "Rixn Tweaks UI",
+    "description": "A clean and customizable UI design system showcasing modern components, layouts, and interactive elements for frontend projects.",
+    "image": "rixn-tweaks.png",
+    "githubLink": "https://github.com/its-m4npreet/rixn-Tweaks-UI",
+    "liveLink": "https://rixn-tweaks-ui.vercel.app/",
+    "type": "UI Design",
+    "featured": true
+  },
+  {
+    "id": "PRJ3H6T2Y9",
+    "title": "Eshoply",
+    "description": "A feature-rich e-commerce platform offering product browsing, real-time filtering, cart management, product details, and a seamless user shopping experience.",
+    "image": "eshoply.png",
+    "githubLink": "https://github.com/its-m4npreet/Ecommerce",
+    "liveLink": "https://eshoply.vercel.app/",
+    "type": "Full Stack",
+    "featured": false
+  },
+  {
+    "id": "PRJ9L4R7P3",
+    "title": "Critic Score",
+    "description": "A rating and review application where users can explore items, view detailed scores, and access an organized review system.",
+    "image": "criticScore.png",
+    "githubLink": "https://github.com/its-m4npreet/CriticScore",
+    "liveLink": "https://critic-score-xcul.vercel.app/",
+    "type": "Full Stack",
+    "featured": false
+  },
+  {
+    "id": "PRJ2B5V8K1",
+    "title": "CityCare",
+    "description": "A cleanliness awareness project designed to encourage users to contribute to a cleaner environment through simple and engaging content.",
+    "image": "landingPage.png",
+    "githubLink": "https://github.com/its-m4npreet/citycare",
+    "liveLink": "https://careyourcity.vercel.app/",
+    "type": "Full Stack",
+    "featured": false
+  }
+]
