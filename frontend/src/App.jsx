@@ -7,6 +7,7 @@ import TwinklingBackground from './components/TwinklingBackground'
 import Bio from './components/bio'
 import Skills from './components/skills'
 import Projects from './components/Projects'
+import SocialMedia from './components/SocialMedia'
 import Footer from './components/Footer'
 import AllProjects from './pages/AllProjects'
 import { GiCoffeeMug } from 'react-icons/gi'
@@ -51,6 +52,7 @@ function App() {
             <Bio />
             <Skills />
             <Projects />
+            <SocialMedia />
             <Footer />
           </div>
         } />
