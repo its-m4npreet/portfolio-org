@@ -1,4 +1,4 @@
-import { supabase } from '../supabaseClient';
+import { supabase, isSupabaseConfigured } from '../supabaseClient';
 
 // Generate a unique fingerprint for the visitor
 const generateFingerprint = () => {
@@ -18,7 +18,7 @@ const generateFingerprint = () => {
     hash = ((hash << 5) - hash) + char;
     hash = hash & hash;
   }
-  return `visitor_${Math.abs(hash)}`;
+  return `${navigator.userAgent}_${Math.abs(hash)}`;
 };
 
 // Get or create visitor ID
@@ -33,53 +33,65 @@ const getVisitorId = () => {
   return visitorId;
 };
 
+// Fallback localStorage visitor tracking
+const trackVisitorLocally = () => {
+  const hasVisited = localStorage.getItem('hasVisited');
+  let count = parseInt(localStorage.getItem('visitorCount') || '0');
+  
+  if (!hasVisited) {
+    count++;
+    localStorage.setItem('visitorCount', count.toString());
+    localStorage.setItem('hasVisited', 'true');
+  }
+  
+  return count;
+};
+
 // Track visitor and return total count
 export const trackVisitor = async () => {
+  // If Supabase is not configured, use localStorage fallback
+  if (!isSupabaseConfigured()) {
+    console.warn('Supabase not configured. Using localStorage for visitor tracking.');
+    return trackVisitorLocally();
+  }
+
   try {
-    const visitorId = getVisitorId();
-    const now = new Date().toISOString();
+    const userAgent = getVisitorId();
     
-    // Check if visitor exists
+    // console.log('Tracking visitor with user_agent:', userAgent);
+    
+    // Check if this user_agent already exists
     const { data: existingVisitor, error: selectError } = await supabase
       .from('visitors')
-      .select('id, visit_count, last_visit')
-      .eq('visitor_id', visitorId)
+      .select('id')
+      .eq('user_agent', userAgent)
       .maybeSingle();
     
     if (selectError) {
       console.error('Error checking visitor:', selectError);
-      // Return localStorage fallback count
-      const fallbackCount = localStorage.getItem('visitorCount') || 0;
-      return parseInt(fallbackCount);
+      return trackVisitorLocally();
     }
     
-    if (existingVisitor) {
-      // Update existing visitor
-      const { error: updateError } = await supabase
-        .from('visitors')
-        .update({ 
-          visit_count: existingVisitor.visit_count + 1,
-          last_visit: now 
-        })
-        .eq('visitor_id', visitorId);
-      
-      if (updateError) {
-        console.error('Error updating visitor:', updateError);
-      }
-    } else {
-      // Insert new visitor
-      const { error: insertError } = await supabase
+    console.log('Existing visitor:', existingVisitor);
+    
+    // Only insert if visitor doesn't exist
+    if (!existingVisitor) {
+      console.log('Inserting new visitor...');
+      const { data, error: insertError } = await supabase
         .from('visitors')
         .insert({ 
-          visitor_id: visitorId,
-          first_visit: now,
-          last_visit: now,
-          visit_count: 1
-        });
+          user_agent: userAgent
+        })
+        .select();
       
       if (insertError) {
         console.error('Error inserting visitor:', insertError);
+        return trackVisitorLocally();
       }
+      
+      console.log('Visitor inserted:', data);
+    } else {
+      console.log('Visitor already exists, skipping insert');
     }
     
     // Get total unique visitors count
@@ -89,21 +101,24 @@ export const trackVisitor = async () => {
     
     if (countError) {
       console.error('Error getting count:', countError);
-      const fallbackCount = localStorage.getItem('visitorCount') || 0;
-      return parseInt(fallbackCount);
+      return trackVisitorLocally();
     }
+    
+    console.log('Total visitors count from DB:', count);
     
     return count || 0;
   } catch (error) {
     console.error('Error tracking visitor:', error);
-    // Fallback to localStorage
-    const fallbackCount = localStorage.getItem('visitorCount') || 0;
-    return parseInt(fallbackCount);
+    return trackVisitorLocally();
   }
 };
 
 // Get total visitors count
 export const getTotalVisitors = async () => {
+  if (!isSupabaseConfigured()) {
+    return parseInt(localStorage.getItem('visitorCount') || '0');
+  }
+
   try {
     const { count, error } = await supabase
       .from('visitors')
@@ -111,12 +126,12 @@ export const getTotalVisitors = async () => {
     
     if (error) {
       console.error('Error getting total visitors:', error);
-      return 0;
+      return parseInt(localStorage.getItem('visitorCount') || '0');
     }
     
     return count || 0;
   } catch (error) {
     console.error('Error getting total visitors:', error);
-    return 0;
+    return parseInt(localStorage.getItem('visitorCount') || '0');
   }
 };

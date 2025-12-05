@@ -2,29 +2,26 @@
 
 ## SQL Schema
 
-Run this SQL in your Supabase SQL Editor to create the visitors table:
+Your current table:
+```sql
+create table visitors (
+  id bigint generated always as identity primary key,
+  user_agent text,
+  visited_at timestamp default now()
+);
+```
+
+## Add RLS Policies
+
+**Run this SQL in your Supabase SQL Editor to allow public access:**
 
 ```sql
--- Create visitors table
-CREATE TABLE IF NOT EXISTS visitors (
-  id BIGSERIAL PRIMARY KEY,
-  visitor_id TEXT UNIQUE NOT NULL,
-  first_visit TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  last_visit TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-  visit_count INTEGER DEFAULT 1,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Create index for faster lookups
-CREATE INDEX IF NOT EXISTS idx_visitor_id ON visitors(visitor_id);
-
 -- Enable Row Level Security
 ALTER TABLE visitors ENABLE ROW LEVEL SECURITY;
 
 -- Drop existing policies if they exist
 DROP POLICY IF EXISTS "Allow public read access" ON visitors;
 DROP POLICY IF EXISTS "Allow public insert" ON visitors;
-DROP POLICY IF EXISTS "Allow public update" ON visitors;
 
 -- Create policy to allow public read access
 CREATE POLICY "Allow public read access" ON visitors
@@ -35,12 +32,14 @@ CREATE POLICY "Allow public read access" ON visitors
 CREATE POLICY "Allow public insert" ON visitors
   FOR INSERT TO anon, authenticated
   WITH CHECK (true);
+```
 
--- Create policy to allow public update
-CREATE POLICY "Allow public update" ON visitors
-  FOR UPDATE TO anon, authenticated
-  USING (true)
-  WITH CHECK (true);
+## Alternative: Disable RLS (Not Recommended for Production)
+
+If you want to disable RLS completely (easier but less secure):
+
+```sql
+ALTER TABLE visitors DISABLE ROW LEVEL SECURITY;
 ```
 
 ## Setup Instructions
