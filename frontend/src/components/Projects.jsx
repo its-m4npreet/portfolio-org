@@ -28,9 +28,9 @@ const Projects = () => {
   }));
 
   return (
-    <div className="projects-section w-full my-8 px-4">
+    <div className="projects-section w-full my-5 px-4">
       {/* Projects Header */}
-      <div className='flex items-center ' >
+      <div className='flex items-center mb-3' >
         <span className='flex items-center gap-1'>
           <span className='text-xl text-gray-400'>[</span>
           <p className="text-white font-semibold text-sm md:text-base">Some things I've built</p>
@@ -48,13 +48,13 @@ const Projects = () => {
           >
             {/* Project Image */}
             <div className="w-full lg:w-1/2">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-xl blur-lg"></div>
                 <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-xl overflow-hidden border border-gray-700/30 aspect-video">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-300"
+                    className="w-full h-full object-cover opacity-50"
                   />
                 </div>
               </div>
