@@ -49,12 +49,12 @@ const Projects = () => {
             {/* Project Image */}
             <div className="w-full lg:w-1/2">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 rounded-xl blur-lg"></div>
-                <div className="relative bg-gradient-to-br from-gray-800/60 to-gray-900/60 rounded-xl overflow-hidden border border-gray-700/30 aspect-video">
+                <div className="absolute rounded-xl blur-lg"></div>
+                <div className="relative  rounded-xl overflow-hidden border border-gray-700/30 aspect-video">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover opacity-50"
+                    className="w-full h-full object-cover "
                   />
                 </div>
               </div>
@@ -107,7 +107,7 @@ const Projects = () => {
         <div className="flex justify-end mt-10">
           <Link
             to="/projects"
-            className="px-5 py-2 bg-[#1a1a1a] hover:bg-[#2a2a2a] text-gray-300 hover:text-white text-sm rounded-md border border-[#333] hover:border-[#444] transition-colors"
+            className="px-5 py-2 bg-transparent hover:bg-[#070707ce] text-gray-300 hover:text-white text-sm rounded-md border border-[#333] hover:border-[#444] transition-colors"
           >
             Show All ({projects.length})
           </Link>
