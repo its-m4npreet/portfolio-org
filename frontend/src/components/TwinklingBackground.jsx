@@ -13,7 +13,7 @@ const TwinklingBackground = () => {
     // Set canvas size and regenerate dots
     const resizeCanvas = () => {
       const width = window.innerWidth;
-      const height = Math.max(window.innerHeight, document.documentElement.scrollHeight, document.body.scrollHeight);
+      const height = window.innerHeight;
       
       canvas.width = width;
       canvas.height = height;
