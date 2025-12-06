@@ -36,7 +36,7 @@ const Footer = () => {
             <span className="font-semibold text-white">
               {loading ? '...' : visitors}
             </span>
-            {!loading && (visitors !== 1 ? 's' : '')}
+            {!loading && (visitors !== 1 ? ' visitors' : '')}
           </span>
         </div>
       </div>
