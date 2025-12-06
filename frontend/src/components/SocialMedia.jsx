@@ -14,24 +14,23 @@ const SocialMedia = () => {
       name: 'LinkedIn',
       icon: FaLinkedin,
       url: 'https://linkedin.com/in/manpreet',
-    //   color: 'text-blue-500',
+     color: 'text-white',
     },
     {
       name: 'Twitter',
       icon: FaXTwitter,
       url: 'https://x.com/m4npreet006',
-    //   color: 'text-sky-400',
-    },
+ color: 'text-white',    },
     {
       name: 'Instagram',
       icon: FaInstagram,
       url: 'https://instagram.com/m4npreet006',
-    //   color: 'text-pink-500',
-    },
+ color: 'text-white',    },
     {
       name: 'Email',
       icon: CgMail ,
       url: 'mailto:manpreetji234567890@gmail.com',
+       color: 'text-white',
     }
   ];
 
