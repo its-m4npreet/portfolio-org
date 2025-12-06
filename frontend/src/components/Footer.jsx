@@ -32,9 +32,9 @@ const Footer = () => {
          {/* Visitor Counter */}
          <div className="flex justify-center items-center gap-2 ">
           <FaEye className="text-gray-400 text-lg" />
-          <span className="text-gray-400 text-sm flex justify-center items-center">
+          <span className="text-gray-400 text-sm flex justify-center items-center gap-2">
             <span className="font-semibold text-white">
-              {loading ? '...' : visitors}
+              {loading ? '...' : visitors }
             </span>
             {!loading && (visitors !== 1 ? ' visitors' : '')}
           </span>
