@@ -9,6 +9,7 @@ import rixnTweaks from '../assets/rixn-tweaks.png';
 import eshoply from '../assets/eshoply.png';
 import criticScore from '../assets/criticScore.png';
 import landingPage from '../assets/landingPage.png';
+import shorrtly from '../assets/shorrtly.png';
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -19,7 +20,8 @@ const Projects = () => {
     'rixn-tweaks.png': rixnTweaks,
     'eshoply.png': eshoply,
     'criticScore.png': criticScore,
-    'landingPage.png': landingPage
+    'landingPage.png': landingPage,
+    'shortly.png': shorrtly
   };
   
   const projects = projectsData.map(project => ({

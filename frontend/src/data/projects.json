@@ -48,5 +48,15 @@
     "liveLink": "https://eshoply.vercel.app/",
     "type": "Full Stack",
     "featured": false
+  },
+  {
+    "id": "PRJ3H6T200",
+    "title": "Shorrtly",
+    "description": "A modern URL shortening service that transforms long URLs into short, shareable links with an intuitive interface and quick link generation.",
+    "image": "shorrtly.png",
+    "githubLink": "https://github.com/its-m4npreet/url_Shortner",
+    "liveLink": "https://shorrtly.netlify.app/",
+    "type": "Full Stack",
+    "featured": false
   }
 ]
