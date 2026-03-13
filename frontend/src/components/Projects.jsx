@@ -10,12 +10,14 @@ import eshoply from '../assets/eshoply.png';
 import criticScore from '../assets/criticScore.png';
 import landingPage from '../assets/landingPage.png';
 import shorrtly from '../assets/shorrtly.png';
+import greenBasket from '../assets/greenobasket.png';
 
 const Projects = () => {
-  const [showAll, setShowAll] = useState(false);
+  const [showAll] = useState(false);
   
   // Map image names to imports
   const imageMap = {
+    'greenobasket.png': greenBasket,
     'blogZone.png': blogZone,
     'rixn-tweaks.png': rixnTweaks,
     'eshoply.png': eshoply,

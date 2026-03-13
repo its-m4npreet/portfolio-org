@@ -9,7 +9,6 @@ import {
   SiJavascript,
   SiTypescript,
   SiHtml5,
-  SiCss3,
   SiNotion,
   SiGithub,
   SiSwagger,
@@ -17,21 +16,31 @@ import {
   SiSupabase,
   SiFirebase,
   SiPhp,
-  SiOracle,
-  SiMysql
+  SiMysql,
+  SiPython,
+  SiNextdotjs,
+  SiC,
+  SiCplusplus,
+  SiPostgresql
 } from 'react-icons/si';
 import { TbBrandReactNative, TbBrandVscode } from 'react-icons/tb';
 import { VscVscode  } from 'react-icons/vsc';
+import { FaCss3Alt, FaDatabase } from 'react-icons/fa';
 
 const Skills = () => {
   const skills = [
     { name: 'mongoDB', icon: SiMongodb, color: 'text-green-500' },
     { name: 'HTML', icon: SiHtml5, color: 'text-orange-600' },
-    { name: 'CSS', icon: SiCss3, color: 'text-blue-500' },
+    { name: 'CSS', icon: FaCss3Alt, color: 'text-blue-500' },
     { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-300' },
     { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-400' },
+    { name: 'Python', icon: SiPython, color: 'text-blue-300' },
+    { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
+    { name: 'C', icon: SiC, color: 'text-blue-500' },
+    { name: 'C++', icon: SiCplusplus, color: 'text-blue-400' },
     { name: 'PHP', icon: SiPhp, color: 'text-indigo-400' },
     { name: 'SQL', icon: SiMysql, color: 'text-blue-600' },
+    { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-sky-500' },
     { name: 'React', icon: SiReact, color: 'text-cyan-400' },
     { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-600' },
     { name: 'Tailwind', icon: SiTailwindcss, color: 'text-cyan-500' },
@@ -41,7 +50,7 @@ const Skills = () => {
     { name: 'Render', icon: TbBrandReactNative, color: 'text-purple-400' },
     { name: 'Supabase', icon: SiSupabase, color: 'text-green-500' },
     { name: 'Firebase', icon: SiFirebase, color: 'text-yellow-500' },
-    { name: 'Oracle', icon: SiOracle, color: 'text-red-600' },
+    { name: 'Oracle', icon: FaDatabase, color: 'text-red-600' },
     { name: 'Notion', icon: SiNotion, color: 'text-white' },
     { name: 'Git', icon: SiGit, color: 'text-orange-600' },
     { name: 'GitHub', icon: SiGithub, color: 'text-white' },

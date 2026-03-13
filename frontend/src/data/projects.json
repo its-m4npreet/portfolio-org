@@ -1,4 +1,14 @@
 [
+   {
+    "id": "PRJ8G4B2K7",
+    "title": "GreenBasket",
+    "description": "A modern grocery e-commerce platform focused on fresh fruits, vegetables, and daily essentials, featuring category-based browsing, trending products, deal sections, and a smooth shopping flow.",
+    "image": "greenobasket.png",
+    "githubLink": "https://github.com/its-m4npreet/groceryMart.git",
+    "liveLink": "https://greenobasket.vercel.app/",
+    "type": "Full Stack",
+    "featured": true
+  },
   {
     "id": "PRJ7K2M9X4",
     "title": "BlogZone-CLG",
