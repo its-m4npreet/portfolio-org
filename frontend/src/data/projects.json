@@ -30,6 +30,16 @@
     "featured": true
   },
   {
+    "id": "PRJ6M3D8S1",
+    "title": "MedSummary",
+    "description": "A healthcare-focused web app for generating concise medical summaries with a clean, fast, and user-friendly experience.",
+    "image": "aiassitant.png",
+    "githubLink": "https://github.com/its-m4npreet/ai-assistant",
+    "liveLink": "https://medsummary.vercel.app/",
+    "type": "Web App",
+    "featured": false
+  },
+  {
     "id": "PRJ9L4R7P3",
     "title": "Critic Score",
     "description": "A rating and review application where users can explore items, view detailed scores, and access an organized review system.",

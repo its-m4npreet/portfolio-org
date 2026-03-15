@@ -11,9 +11,15 @@ import criticScore from '../assets/criticScore.png';
 import landingPage from '../assets/landingPage.png';
 import shorrtly from '../assets/shorrtly.png';
 import greenBasket from '../assets/greenobasket.png';
+import aiAssistant from '../assets/aiassitant.png';
 
 const Projects = () => {
   const [showAll] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
+
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
+  };
   
   // Map image names to imports
   const imageMap = {
@@ -23,7 +29,8 @@ const Projects = () => {
     'eshoply.png': eshoply,
     'criticScore.png': criticScore,
     'landingPage.png': landingPage,
-    'shortly.png': shorrtly
+    'shortly.png': shorrtly,
+    'aiassitant.png': aiAssistant
   };
   
   const projects = projectsData.map(project => ({
@@ -54,11 +61,19 @@ const Projects = () => {
             <div className="w-full lg:w-1/2">
               <div className="relative">
                 <div className="absolute rounded-xl blur-lg"></div>
-                <div className="relative  rounded-xl overflow-hidden border border-gray-700/30 aspect-video">
+                <div className="relative  rounded-xl overflow-hidden border border-gray-700/30 aspect-video bg-[#151515]">
+                  {!loadedImages[project.id] && (
+                    <div className="absolute inset-0 animate-pulse bg-linear-to-r from-[#121212] via-[#252525] to-[#121212]"></div>
+                  )}
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover "
+                    loading="lazy"
+                    decoding="async"
+                    onLoad={() => handleImageLoad(project.id)}
+                    className={`w-full h-full object-cover transition-opacity duration-500 ${
+                      loadedImages[project.id] ? 'opacity-100' : 'opacity-0'
+                    }`}
                   />
                 </div>
               </div>

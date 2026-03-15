@@ -1,4 +1,5 @@
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import projectsData from '../data/projects.json';
 
@@ -10,9 +11,15 @@ import criticScore from '../assets/criticScore.png';
 import landingPage from '../assets/landingPage.png';
 import shorrtly from '../assets/shorrtly.png';
 import greenBasket from '../assets/greenobasket.png';
+import aiAssistant from '../assets/aiassitant.png';
 
 
 const AllProjects = () => {
+  const [loadedImages, setLoadedImages] = useState({});
+
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }));
+  };
    
   // Map image names to imports
   const imageMap = {
@@ -22,7 +29,8 @@ const AllProjects = () => {
     'eshoply.png': eshoply,
     'criticScore.png': criticScore,
     'landingPage.png': landingPage,
-    'shorrtly.png':shorrtly
+    'shorrtly.png':shorrtly,
+    'aiassitant.png': aiAssistant
   };
   
   const projects = projectsData.map(project => ({
@@ -63,11 +71,19 @@ const AllProjects = () => {
             <div className="w-full">
               <div className="relative group">
                 <div className="absolute  rounded-xl group-hover:blur-xl transition-all duration-300"></div>
-                <div className="relative  rounded-xl overflow-hidden border border-gray-700/30 aspect-video">
+                <div className="relative  rounded-xl overflow-hidden border border-gray-700/30 aspect-video bg-[#151515]">
+                  {!loadedImages[project.id] && (
+                    <div className="absolute inset-0 animate-pulse bg-linear-to-r from-[#121212] via-[#252525] to-[#121212]"></div>
+                  )}
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover transition-opacity duration-300"
+                    loading="lazy"
+                    decoding="async"
+                    onLoad={() => handleImageLoad(project.id)}
+                    className={`w-full h-full object-cover transition-opacity duration-500 ${
+                      loadedImages[project.id] ? 'opacity-100' : 'opacity-0'
+                    }`}
                   />
                 </div>
               </div>
